@@ -1,0 +1,444 @@
+/* Importar Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Variables de colores */
+:root {
+  --rosado-polvoriento: #C2A4AD;
+  --blanco-anejado: #F5F5DC;
+  --dorado-opaco: #A68A57;
+  --negro: #000000;
+}
+
+/* Reset y configuración base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  background-color: var(--blanco-anejado);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Header con imagen de fondo */
+header {
+  background-image: url('../images/Queen.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(245, 245, 220, 0.8); /* Blanco Añejado con opacidad */
+  z-index: 1;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.band-name {
+  font-size: 6rem;
+  font-weight: 400; /* Bebas Neue is bold by default */
+  color: var(--negro);
+  letter-spacing: 10px;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Navegación principal */
+.navbar {
+  width: 100%;
+  background-color: var(--negro);
+  padding: 10px 0;
+  border: 5px solid var(--dorado-opaco);
+  position: relative;
+  z-index: 2;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.navbar ul li a:hover {
+  background-color: var(--rosado-polvoriento);
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+/* Contenido principal */
+main {
+  padding: 20px;
+  background-color: var(--blanco-anejado);
+}
+
+/* Video responsive */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%; 
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  border-radius: 15px;
+  margin: 20px auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border: 3px solid var(--rosado-polvoriento);
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Títulos de sección */
+h2 {
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  color: var(--negro);
+  text-align: center;
+  margin: 40px 0 20px 0;
+  letter-spacing: 3px;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background-color: var(--dorado-opaco);
+  margin: 0 auto 40px auto;
+  width: 200px;
+  border-radius: 2px;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  margin-top: 0;
+}
+
+/* Items de historia */
+.historia-item {
+  display: flex;
+  align-items: center;
+  gap: 40px; 
+  margin-bottom: 60px; 
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--rosado-polvoriento);
+}
+
+.historia-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.imagen-banda {
+  width: 40%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.imagen-banda:hover {
+  transform: scale(1.02);
+}
+
+.historia-item p {
+  margin: 0;
+  padding: 10px;
+  font-size: 20px;
+  line-height: 1.8;
+  color: var(--negro);
+  text-align: justify;
+  font-family: Arial, sans-serif;
+}
+
+/* Items de impacto */
+.impacto-item {
+  display: flex;
+  align-items: center;
+  gap: 40px; 
+  margin-bottom: 60px; 
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--rosado-polvoriento);
+}
+
+.impacto-item.reverse {
+  flex-direction: row-reverse; 
+}
+
+.impacto-imagen {
+  width: 40%; 
+  max-width: 400px; 
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.impacto-imagen:hover {
+  transform: scale(1.02);
+}
+
+.impacto-texto {
+  width: 60%;
+}
+
+.impacto-texto h3 {
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 2rem;
+  color: var(--negro);
+  margin-bottom: 15px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.impacto-texto p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: var(--negro);
+  text-align: justify; 
+  font-family: Arial, sans-serif;
+}
+
+/* Footer */
+footer {
+  background-color: var(--negro);
+  color: white;
+  padding: 30px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin: 15px;
+}
+
+.footer-column h4 {
+  border-bottom: 2px solid var(--dorado-opaco);
+  padding-bottom: 10px;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.footer-column p strong {
+  color: white;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.footer-column a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.footer-column a:hover {
+  color: var(--rosado-polvoriento);
+  text-decoration: underline;
+}
+
+.back-to-top-container {
+  width: 50%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.back-to-top {
+  background-color: var(--negro);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 400;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border: 2px solid var(--dorado-opaco);
+}
+
+.back-to-top:hover {
+  background-color: var(--rosado-polvoriento);
+  color: var(--negro);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid var(--dorado-opaco);
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .band-name {
+    font-size: 4rem;
+    letter-spacing: 5px;
+  }
+  
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar ul li a {
+    font-size: 22px;
+    padding: 10px 0;
+  }
+
+  .historia-item,
+  .impacto-item {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .historia-item.reverse,
+  .impacto-item.reverse {
+    flex-direction: column;
+  }
+
+  .imagen-banda,
+  .impacto-imagen {
+    width: 100%;
+    max-width: none;
+    height: auto;
+  }
+
+  .impacto-texto {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .historia-item p,
+  .impacto-texto p {
+    text-align: left; 
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  .impacto-texto h3 {
+    font-size: 1.5rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .band-name {
+    font-size: 3rem;
+    letter-spacing: 3px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .impacto-texto h3 {
+    font-size: 1.2rem;
+  }
+  
+  .historia-item p,
+  .impacto-texto p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .video-responsive {
+    padding-bottom: 75%; 
+  }
+
+  .navbar ul li a {
+    font-size: 20px;
+  }
+}
