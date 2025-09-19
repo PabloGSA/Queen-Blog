@@ -1,0 +1,840 @@
+/* Importar Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Variables de colores */
+:root {
+  --rosado-polvoriento: #C2A4AD;
+  --blanco-anejado: #F5F5DC;
+  --dorado-opaco: #A68A57;
+  --negro: #000000;
+}
+
+/* Reset y configuración base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  background-color: var(--blanco-anejado);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Header con imagen de fondo */
+header {
+  background-image: url('images/Queen.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(245, 245, 220, 0.8); /* Blanco Añejado con opacidad */
+  z-index: 1;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.band-name {
+  font-size: 6rem;
+  font-weight: 400; /* Bebas Neue is bold by default */
+  color: var(--negro);
+  letter-spacing: 10px;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Navegación principal */
+.main-nav {
+  width: 100%;
+  background-color: var(--negro);
+  padding: 10px 0;
+  border: 5px solid var(--dorado-opaco);
+  position: relative;
+  z-index: 2;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.main-nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.main-nav ul li a:hover {
+  background-color: var(--rosado-polvoriento);
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+/* Navegación secundaria */
+.sub-nav {
+  width: 100%;
+  background-color: var(--rosado-polvoriento);
+  padding: 10px 0;
+  border: 5px solid var(--dorado-opaco);
+}
+
+.sub-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sub-nav ul li a {
+  color: var(--negro) !important;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  user-select: none;
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.sub-nav ul li a:hover {
+  background-color: var(--dorado-opaco) !important;
+  color: var(--negro) !important;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.sub-nav ul li a.active {
+  background-color: var(--rosado-polvoriento) !important;
+  color: var(--negro) !important;
+  font-weight: 600;
+}
+
+/* Estilos para botones de navegación */
+.nav-button {
+  color: var(--negro) !important;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  user-select: none;
+  position: relative;
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-button:hover {
+  background-color: var(--dorado-opaco) !important;
+  color: var(--negro) !important;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+.nav-button.active {
+  background-color: var(--rosado-polvoriento) !important;
+  color: var(--negro) !important;
+  font-weight: 600;
+}
+
+.combined-nav {
+  background-color: var(--rosado-polvoriento);
+  color: var(--negro);
+  font-weight: 400;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-align: center;
+  min-width: 300px;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.combined-nav:hover {
+  background-color: var(--dorado-opaco);
+  color: var(--negro);
+}
+
+/* Contenido principal */
+main {
+  padding: 20px;
+  background-color: var(--blanco-anejado);
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.album-carousel {
+    background-color: var(--blanco-anejado);
+    padding: 40px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carousel-container {
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 15px;
+}
+
+.album-card {
+    min-width: 120px;
+    height: 150px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+    border: 2px solid #A68A57;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.album-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+    border-radius: 6px;
+}
+
+.album-card:hover img {
+    transform: scale(1.05);
+}
+
+.carousel-btn {
+    background-color: var(--negro);
+    color: var(--blanco-anejado);
+    border: 2px solid var(--dorado-opaco);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.carousel-btn:hover {
+    background-color: var(--rosado-polvoriento);
+    color: var(--negro);
+}
+
+.section-divider {
+    height: 3px;
+    background-color: var(--dorado-opaco);
+    margin: 30px 0;
+    border-radius: 2px;
+}
+
+.studio-albums,
+.live-compilation {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.studio-albums h2,
+.live-compilation h2 {
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    color: var(--negro);
+    text-align: center;
+    margin: 40px 0 20px 0;
+    letter-spacing: 3px;
+}
+
+.albums-layout {
+    margin-top: 30px;
+}
+
+.album-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    align-items: stretch;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--rosado-polvoriento);
+}
+
+.album-square {
+    flex: 0 0 200px;
+    height: 200px;
+}
+
+.album-description {
+    flex: 1;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.album-description.wide {
+    flex: 2;
+}
+
+.album-description h3 {
+    font-family: 'Bebas Neue', Arial, sans-serif;
+    font-size: 2rem;
+    color: var(--negro);
+    margin-bottom: 15px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.album-description p {
+    color: var(--negro);
+    font-size: 20px;
+    line-height: 1.8;
+    text-align: justify;
+    font-family: Arial, sans-serif;
+}
+
+.album-photo {
+    height: 200px;
+    background-color: var(--rosado-polvoriento);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--negro);
+    font-weight: bold;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.album-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+}
+
+.album-photo:hover {
+    transform: scale(1.02);
+}
+
+.album-photo:hover img {
+    transform: scale(1.05);
+}
+
+.album-photo::after {
+    content: "FOTO";
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(194, 164, 173, 0.8);
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+.album-info {
+    padding: 20px;
+    background-color: #F5F5DC;
+}
+
+.album-info h3 {
+    font-size: 1.1rem;
+    color: #000000;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.album-info p {
+    color: #A68A57;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.live-compilation .albums-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.live-compilation .album-item.large {
+    grid-column: span 2;
+}
+
+/* Footer */
+footer {
+  background-color: var(--negro);
+  color: white;
+  padding: 30px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin: 15px;
+}
+
+.footer-column h4 {
+  border-bottom: 2px solid var(--dorado-opaco);
+  padding-bottom: 10px;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.footer-column p strong {
+  color: white;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.footer-column a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.footer-column a:hover {
+  color: var(--rosado-polvoriento);
+  text-decoration: underline;
+}
+
+.back-to-top-container {
+  width: 50%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.back-to-top {
+  background-color: var(--negro);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 400;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border: 2px solid var(--dorado-opaco);
+}
+
+.back-to-top:hover {
+  background-color: var(--rosado-polvoriento);
+  color: var(--negro);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid var(--dorado-opaco);
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+/* Responsive Design */
+
+/* Extra large screens */
+@media (min-width: 1400px) {
+  .studio-albums,
+  .live-compilation {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .album-row {
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+  }
+}
+
+/* Large tablets and small desktops */
+@media (max-width: 1200px) {
+  .studio-albums,
+  .live-compilation {
+    padding: 30px 15px;
+  }
+  
+  .album-row {
+    gap: 15px;
+  }
+  
+  .album-description h3 {
+    font-size: 1.8rem;
+  }
+  
+  .album-description p {
+    font-size: 18px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .band-name {
+    font-size: 4rem;
+    letter-spacing: 5px;
+  }
+  
+  .main-nav ul,
+  .sub-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav ul li,
+  .sub-nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .main-nav ul li a,
+  .sub-nav ul li a,
+  .nav-button {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+
+  .album-row {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .album-square {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .album-description {
+    width: 100%;
+    text-align: center;
+  }
+
+  .album-description p {
+    text-align: left; 
+  }
+
+  .studio-albums h2,
+  .live-compilation h2 {
+    font-size: 2.5rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    min-width: 100%;
+    margin: 10px 0;
+  }
+
+  .carousel-container {
+    width: 90%;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .band-name {
+    font-size: 3rem;
+    letter-spacing: 3px;
+  }
+
+  .logo-section {
+    padding: 30px 20px;
+  }
+
+  .main-nav ul li a,
+  .sub-nav ul li a,
+  .nav-button {
+    font-size: 20px;
+    padding: 8px 0;
+  }
+
+  .studio-albums h2,
+  .live-compilation h2 {
+    font-size: 2rem;
+    margin: 30px 0 15px 0;
+  }
+  
+  .album-description h3 {
+    font-size: 1.5rem;
+  }
+  
+  .album-description p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .album-row {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .album-square {
+    max-width: 250px;
+  }
+
+  .album-photo {
+    height: 180px;
+  }
+
+  .album-carousel {
+    padding: 20px 10px;
+  }
+  
+  .carousel-container {
+    width: 85%;
+  }
+  
+  .album-card {
+    min-width: 100px;
+    height: 120px;
+  }
+
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .footer-container {
+    padding: 20px 10px;
+  }
+
+  .footer-column h4 {
+    font-size: 20px;
+  }
+  
+  .footer-column a {
+    font-size: 18px;
+  }
+
+  .back-to-top {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .band-name {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .logo-section {
+    padding: 20px 15px;
+  }
+
+  .main-nav ul li a,
+  .sub-nav ul li a,
+  .nav-button {
+    font-size: 18px;
+    padding: 6px 0;
+  }
+
+  .studio-albums h2,
+  .live-compilation h2 {
+    font-size: 1.8rem;
+  }
+  
+  .album-description h3 {
+    font-size: 1.3rem;
+  }
+  
+  .album-description p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .album-row {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  .album-square {
+    max-width: 200px;
+  }
+
+  .album-photo {
+    height: 150px;
+  }
+
+  .carousel-container {
+    width: 90%;
+  }
+  
+  .album-card {
+    min-width: 80px;
+    height: 100px;
+  }
+
+  .carousel-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .footer-column h4 {
+    font-size: 18px;
+  }
+  
+  .footer-column a {
+    font-size: 16px;
+  }
+
+  .back-to-top {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media (max-width: 768px) and (orientation: landscape) {
+  .logo-section {
+    padding: 20px 15px;
+  }
+  
+  .band-name {
+    font-size: 2.5rem;
+  }
+  
+  .album-row {
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .album-square {
+    flex: 0 0 150px;
+    height: 150px;
+  }
+  
+  .album-photo {
+    height: 150px;
+  }
+  
+  .album-description {
+    text-align: left;
+  }
+  
+  .album-description p {
+    font-size: 16px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .album-carousel,
+  .carousel-btn,
+  .back-to-top {
+    display: none;
+  }
+  
+  .album-row {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+}
