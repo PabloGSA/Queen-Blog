@@ -182,7 +182,6 @@ header::before {
 }
 
 .nav-button.active {
-  background-color: var(--rosado-polvoriento) !important;
   color: var(--negro) !important;
   font-weight: 600;
 }
