@@ -70,7 +70,7 @@ header::before {
 }
 
 /* Navegación principal */
-.main-nav {
+.navbar {
   width: 100%;
   background-color: var(--negro);
   padding: 10px 0;
@@ -79,7 +79,7 @@ header::before {
   z-index: 2;
 }
 
-.main-nav ul {
+.navbar ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -87,7 +87,7 @@ header::before {
   justify-content: center;
 }
 
-.main-nav ul li a {
+.navbar ul li a {
   color: white;
   text-decoration: none;
   padding: 10px 15px;
@@ -98,7 +98,7 @@ header::before {
   letter-spacing: 2px;
 }
 
-.main-nav ul li a:hover {
+.navbar ul li a:hover {
   background-color: var(--rosado-polvoriento);
   transition: color 0.3s ease, background-color 0.3s ease;
   border-radius: 8px;
@@ -568,19 +568,19 @@ footer {
     letter-spacing: 5px;
   }
   
-  .main-nav ul,
+  .navbar ul,
   .sub-nav ul {
     flex-direction: column;
     align-items: center;
   }
 
-  .main-nav ul li,
+  .navbar ul li,
   .sub-nav ul li {
     width: 100%;
     text-align: center;
   }
 
-  .main-nav ul li a,
+  .navbar ul li a,
   .sub-nav ul li a,
   .nav-button {
     padding: 10px 0;
@@ -641,7 +641,7 @@ footer {
     padding: 30px 20px;
   }
 
-  .main-nav ul li a,
+  .navbar ul li a,
   .sub-nav ul li a,
   .nav-button {
     font-size: 20px;
@@ -724,7 +724,7 @@ footer {
     padding: 20px 15px;
   }
 
-  .main-nav ul li a,
+  .navbar ul li a,
   .sub-nav ul li a,
   .nav-button {
     font-size: 18px;
