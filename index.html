@@ -1,317 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queen - Página Principal</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Impacto - Queen</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWix+LLm1x51U/PzD3d8bC4m/p4C3G+v3b08zI8G6+S2Pz4D2E5T9j95z2N88w5F6v6V6+Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWix+LLm1x51U/PzD3d8bC4m/p4C3G+v3b08zI8G6+S2Pz4D2E5T9j95z2N88w5F6v6V6+Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Bebas Neue', sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .header {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
-            background-size: 400% 400%;
-            animation: gradientShift 8s ease infinite;
-            padding: 2rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .band-name {
-            font-size: 4rem;
-            font-weight: bold;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-            margin-bottom: 1rem;
-            letter-spacing: 0.2em;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-            margin-bottom: 2rem;
-        }
-
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem 2rem;
-        }
-
-        .welcome-text {
-            text-align: center;
-            max-width: 800px;
-            margin-bottom: 3rem;
-        }
-
-        .welcome-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #ff6b6b;
-        }
-
-        .welcome-text p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            color: #e0e0e0;
-        }
-
-        .navigation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            width: 100%;
-        }
-
-        .nav-card {
-            background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .nav-card:hover::before {
-            left: 100%;
-        }
-
-        .nav-card:hover {
-            transform: translateY(-10px);
-            border-color: #ff6b6b;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
-        }
-
-        .nav-card i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #ff6b6b;
-        }
-
-        .nav-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-
-        .nav-card p {
-            font-size: 1rem;
-            color: #b0b0b0;
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
-        }
-
-        .nav-card a {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            color: white;
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-card a:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
-        }
-
-        .footer {
-            background: #1a1a1a;
-            padding: 2rem;
-            text-align: center;
-            border-top: 2px solid #333;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-column {
-            text-align: center;
-        }
-
-        .footer-column h4 {
-            color: #ff6b6b;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .footer-column p {
-            color: #b0b0b0;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-column a {
-            color: #4ecdc4;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-column a:hover {
-            color: #ff6b6b;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 1rem;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .band-name {
-                font-size: 2.5rem;
-            }
-            
-            .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .welcome-text h2 {
-                font-size: 2rem;
-            }
-            
-            .navigation-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <div class="header-content">
-            <h1 class="band-name">QUEEN</h1>
-            <p class="subtitle">La Leyenda del Rock</p>
-        </div>
+  </head>
+  <body id="top">
+    <header>
+      <div class="logo-section">
+        <h1 class="band-name">QUEEN</h1>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#">IMPACTO</a></li>
+          <li><a href="Banda/index-banda.html">BANDA</a></li>
+          <li><a href="discografia.html">MÚSICA</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <main class="main-content">
-        <div class="welcome-text">
-            <h2>Bienvenido al Universo de Queen</h2>
-            <p>Descubre la historia, la música y el legado de una de las bandas más icónicas de todos los tiempos.</p>
-            <p>Explora las diferentes secciones para conocer más sobre los miembros de la banda, su impacto en la música y su discografía completa.</p>
+    <main>
+      <div class="video-responsive">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/vbvyNnw8Qjg?si=3gatJ0tlqIftZv7c"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <h2>Historia de la banda</h2>
+      <hr />
+      <div class="historia-item">
+        <p>
+          Queen se formó en Londres en 1970, con el cantante Freddie Mercury,
+          el guitarrista Brian May, el baterista Roger Taylor y el bajista
+          John Deacon. Cada miembro aportó su talento como compositor, lo que
+          enriqueció enormemente el catálogo musical de la banda. Lanzaron su
+          álbum debut, Queen, en 1973, pero fue con el éxito de su cuarto
+          álbum, A Night at the Opera (1975), que alcanzaron el estrellato
+          mundial. La canción "Bohemian Rhapsody" se convirtió en un himno
+          global y desafió las convenciones de la música rock con su
+          estructura operística y su innovador video musical.
+        </p>
+        <img
+          src="images/Queen_A_Night_At_The_Opera_(1975_Elektra_publicity_photo_02).jpg"
+          alt="Foto de la banda"
+          class="imagen-banda"
+        />
+      </div>
+   
+      <div class="historia-item reverse">
+        <img
+          src="images/queen-official-live-aid-performance-available-for-24-hours-v0-L9CKGl03BHiWpuOGnvIAk7EE9Yno0pnP1PZthEZBACE.webp"
+          alt="Queen live Aid"
+          class="imagen-banda"
+        />
+        <p>
+          A lo largo de los años 70 y 80, Queen lanzó una serie de álbumes
+          exitosos como News of the World (1977), que incluía los himnos "We
+          Will Rock You" y "We Are the Champions", y The Game (1980), con el
+          éxito bailable "Another One Bites the Dust". Su carisma en el
+          escenario era legendario, y su actuación en el concierto Live Aid de
+          1985 se considera una de las mejores de la historia del rock.
+        </p>
+      </div>
+
+      <div class="historia-item">
+        <p>
+          La banda continuó grabando y girando a pesar del diagnóstico de SIDA
+          de Freddie Mercury, que mantuvo en privado. Tras su fallecimiento en
+          1991, Queen se desintegró, aunque Brian May y Roger Taylor han
+          continuado su legado en diversos proyectos. La muerte de Mercury
+          marcó el fin de una era, pero su música y su espíritu perduran.
+        </p>
+        <img
+          src="images/queen-1990-v0-jxt7g5kre26e1.webp"
+          alt="últimos días de la banda con Freddie"
+          class="imagen-banda"
+        />
+      </div>
+
+      <h2>Impacto en la música y la cultura</h2>
+      <hr />
+      <div class="impacto-item">
+        <img src="images/queenenelestudio.jpg" alt="La banda en el estudio" class="impacto-imagen">
+        <div class="impacto-texto">
+          <h3>Innovación musical:</h3>
+          <p>Fusionaron rock, ópera, pop, gospel y hard rock en un sonido único. Experimentaron con técnicas de grabación y sobregrabación, creando arreglos complejos que se convirtieron en su sello distintivo.</p>
         </div>
+      </div>
 
-        <div class="navigation-grid">
-            <div class="nav-card">
-                <i class="fas fa-users"></i>
-                <h3>La Banda</h3>
-                <p>Conoce a Freddie Mercury, Brian May, Roger Taylor y John Deacon. Descubre sus historias, talentos y contribuciones únicas a Queen.</p>
-                <a href="Banda/index-banda.html">Explorar Banda</a>
-            </div>
-
-            <div class="nav-card">
-                <i class="fas fa-star"></i>
-                <h3>Impacto Cultural</h3>
-                <p>Sumérgete en el legado de Queen y su influencia en la música, la cultura y el entretenimiento mundial.</p>
-                <a href="Impacto/index-impacto.html">Ver Impacto</a>
-            </div>
-
-            <div class="nav-card">
-                <i class="fas fa-music"></i>
-                <h3>Discografía</h3>
-                <p>Explora la completa discografía de Queen, desde sus primeros álbumes hasta sus grandes éxitos y álbumes en vivo.</p>
-                <a href="discografia.html">Ver Música</a>
-            </div>
+      <div class="impacto-item reverse">
+        <img src="images/6115oSDqoCL._UF894,1000_QL80_.jpg" alt="Video musical de Bohemian Rhapsody" class="impacto-imagen">
+        <div class="impacto-texto">
+          <h3>Pioneros del videoclip:</h3>
+          <p>Con "Bohemian Rhapsody", Queen creó uno de los primeros videos musicales conceptuales, elevando el formato de un simple clip promocional a una forma de arte.</p>
         </div>
+      </div>
+
+      <div class="impacto-item">
+        <img src="images/000264130011.jpg" alt="Escenario de Queen" class="impacto-imagen">
+        <div class="impacto-texto">
+          <h3>Maestros del espectáculo:</h3>
+          <p>Sus conciertos eran eventos teatrales y grandiosos, llenos de energía y dramatismo, lo que les valió una reputación como una de las mejores bandas en vivo de todos los tiempos.</p>
+        </div>
+      </div>
+
+      <div class="impacto-item reverse">
+        <img src="images/queen-day-film-banda-1-696x476.jpg" alt="Influencia de Queen" class="impacto-imagen">
+        <div class="impacto-texto">
+          <h3>Influencia duradera:</h3>
+          <p>Su música ha influenciado a innumerables artistas de géneros tan variados como el rock, el pop y el metal. Canciones como "Bohemian Rhapsody", "We Will Rock You" y "Don't Stop Me Now" siguen siendo himnos populares en eventos deportivos, películas y programas de televisión.</p>
+        </div>
+      </div>
     </main>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>Colaborador</h4>
-                <p><strong>Leandra Yanes</strong></p>
-                <a href="https://github.com/leandrayanesdeveloper" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-            </div>
-
-            <div class="footer-column">
-                <h4>Colaborador</h4>
-                <p><strong>Pablo Sánchez</strong></p>
-                <a href="https://github.com/PabloGSA" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-            </div>
-
-            <div class="footer-column">
-                <h4>Más Información</h4>
-                <a href="https://www.queenonline.com/es" target="_blank" rel="noopener noreferrer">
-                    Página Oficial de Queen
-                </a>
-            </div>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-column profile-column">
+          <h4>Colaborador</h4>
+          <p><strong>Leandra Yanes</strong></p>
+          <a
+            href="https://github.com/leandrayanesdeveloper"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-github"></i> GitHub
+          </a>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Queen Fan Site. Todos los derechos reservados.</p>
+
+        <div class="footer-column profile-column">
+          <h4>Colaborador</h4>
+          <p><strong>Pablo Sánchez</strong></p>
+          <a
+            href="https://github.com/PabloGSA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-github"></i> GitHub
+          </a>
         </div>
+
+        <div class="footer-column links-column">
+          <h4>Más Información</h4>
+          <a
+            href="https://www.queenonline.com/es"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="source-link"
+          >
+            Página Oficial de Queen
+          </a>
+        </div>
+        <div class="back-to-top-container">
+          <a href="#top" class="back-to-top">Volver al Inicio ↑</a>
+        </div>
+      </div>
+      <div class="footer-bottom"></div>
     </footer>
-</body>
+  </body>
 </html>

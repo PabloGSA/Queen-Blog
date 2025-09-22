@@ -30,7 +30,7 @@ body {
 
 /* Header con imagen de fondo */
 header {
-  background-image: url('../images/Queen.jpg');
+  background-image: url('images/Queen.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
